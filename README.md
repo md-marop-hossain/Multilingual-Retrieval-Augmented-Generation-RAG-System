@@ -53,3 +53,21 @@ Start the FastAPI app using:
 **Step 5: Start the Streamlit UI**
 
 ```streamlit run rag_ui.py```
+
+## 🛠️ Tools & Libraries Used
+
+| Category              | Tool/Library           | Purpose                                                                 |
+|-----------------------|------------------------|-------------------------------------------------------------------------|
+| LLM & Embeddings      | OpenAI GPT-4o          | Generates grounded answers from retrieved context                       |
+|                       | text-embedding-3-large | Multilingual, high-quality embeddings for semantic chunk comparison     |
+| Vector Store          | FAISS                  | Fast Approximate Nearest Neighbor search over dense vector space        |
+| Backend Framework     | FastAPI                | Backend API for handling queries, answers, and evaluations              |
+| Frontend Interface    | Streamlit              | Provides a user-friendly web UI for interacting with the RAG system     |
+| PDF Text Extraction   | PyMuPDF (fitz)         | Extracts formatted Bangla and English text from PDFs                    |
+| OCR (Image PDF)       | pytesseract            | Extracts text from scanned or image-based PDFs using Tesseract OCR      |
+| Image Processing      | Pillow (PIL)           | Handles image preprocessing for OCR pipeline                            |
+| Evaluation            | scikit-learn           | Computes cosine similarity for answer relevance scoring                 |
+| API Key Management    | python-dotenv          | Loads sensitive keys like `OPENAI_API_KEY` securely from `.env` file    |
+| Async Handling        | nest_asyncio           | Enables async FastAPI in notebook-style or blocking environments        |
+| Tokenization Utility  | tiktoken               | Used to count tokens (e.g., for chunk size management)        |
+
