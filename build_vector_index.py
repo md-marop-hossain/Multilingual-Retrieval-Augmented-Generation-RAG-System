@@ -5,8 +5,14 @@ import faiss
 import pickle
 from openai import OpenAI
 
-os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
-client = OpenAI()
+from dotenv import load_dotenv
+load_dotenv()
+
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("OPENAI_API_KEY is missing or not loaded from .env")
+
+client = OpenAI(api_key=api_key)
 
 input_file = "data/cleaned_text.txt"
 os.makedirs("index", exist_ok=True)
