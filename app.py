@@ -10,8 +10,14 @@ from sklearn.metrics.pairwise import cosine_similarity
 import nest_asyncio
 
 # Setup
-os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"  
-client = OpenAI()
+from dotenv import load_dotenv
+load_dotenv()
+  
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("OPENAI_API_KEY is missing or not loaded from .env")
+
+client = OpenAI(api_key=api_key)
 nest_asyncio.apply()
 
 # Load vector index and chunks
