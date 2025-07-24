@@ -20,7 +20,7 @@ Design and implement a basic RAG pipeline capable of understanding and respondin
 
 ## 🚀 Setup Instructions
 
-Step 1: Clone the Repository and Set Up Environment
+**Step 1: Clone the Repository and Set Up Environment**
 ```
 git clone https://github.com/md-marop-hossain/Multilingual-Retrieval-Augmented-Generation-RAG-System.git
 cd Multilingual-Retrieval-Augmented-Generation-RAG-System
@@ -28,7 +28,7 @@ python -m venv myenv
 source myenv/bin/activate  # or myenv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
-step 2: Extract Text from PDF
+**step 2: Extract Text from PDF**
 
 Run the following command to extract text from the PDF using ```pdf_extractor.py```:
    
@@ -38,6 +38,7 @@ Run the following command to extract text from the PDF using ```pdf_extractor.py
 Step 3: Build Vector Index
 
 This step includes chunking, embedding, and creating the vector store:
+
 ```python build_vector_index.py```
 
 Step 4: Launch the FastAPI Server
