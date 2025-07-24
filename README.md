@@ -4,16 +4,18 @@ Design and implement a basic RAG pipeline capable of understanding and respondin
 ## 📦 Directory Structure
 ```
 ├── app.py # FastAPI backend
-
-├── build_index.py # Embeds and stores vector data using FAISS
-├── extract_text.py # Extracts and preprocesses text from PDF
+├── build_vector_index.py # Embeds and stores vector data using FAISS
+├── pdf_extractor.py # Extracts and preprocesses text from PDF
+├── rag_ui.py # Extracts and preprocesses text from PDF
 ├── index/
 │ ├── faiss_index.idx # Vector index
 │ └── valid_chunks.pkl # Serialized document chunks
-├── logs/
-│ └── chat_log.jsonl # User Q&A logs (if /chat is used)
+├── myenv #virtual environment
 ├── .env # OpenAI API Key
-└── HSC26_Bangla.pdf # Your knowledge base (Bangla PDF)
+├── data/
+│ ├── cleaned_text.txt 
+│ └── HSC26_Bangla.pdf 
+└──.gitignore
 ```
 
 ## 🚀 Setup Instructions
