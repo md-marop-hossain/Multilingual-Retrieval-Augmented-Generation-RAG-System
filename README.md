@@ -74,3 +74,7 @@ Start the FastAPI app using:
 | Math/Numeric          | numpy                  | Vector and matrix operations                                            |
 | Typing & Validation   | pydantic               | Defines and validates API input/output models                           |
 | Server                | uvicorn                | ASGI server for running FastAPI app                                     |
+
+## 💬 Sample Queries and Outputs
+
+
