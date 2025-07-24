@@ -9,3 +9,4 @@ uvicorn
 scikit-learn
 nest_asyncio
 streamlit
+python-dotenv
