@@ -93,3 +93,15 @@ Start the FastAPI app using:
 </table>
 
 
+📝 **What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?**
+
+I used PyMuPDF (```fitz```) to render each page of the PDF as an image and Tesseract OCR (via ```pytesseract```) to extract text from those images. This approach was necessary because the PDF contains scanned Bangla text (not selectable or searchable), which made traditional text extraction tools like ```PyPDF2``` or ```pdfminer``` ineffective.
+
+To support Bangla language OCR, I configured Tesseract with the ```ben``` language model and ensured proper setup with ```TESSDATA_PREFIX``` on Windows.
+
+Yes, there were formatting challenges:
+- Many pages had inconsistent spacing, broken characters, and misaligned text blocks.
+- OCR sometimes misinterpreted compound Bangla characters or punctuation.
+- To address this, I used Unicode normalization (```unicodedata```) and regular expressions to clean and standardize the output.
+
+This OCR-based method allowed me to extract readable and indexable Bangla text from the scanned PDF for downstream RAG tasks.
