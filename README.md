@@ -13,3 +13,11 @@ Design and implement a basic RAG pipeline capable of understanding and respondin
 │ └── chat_log.jsonl # User Q&A logs (if /chat is used)
 ├── .env # OpenAI API Key
 └── HSC26_Bangla.pdf # Your knowledge base (Bangla PDF)
+
+## 🚀 Setup Instructions
+```git clone https://github.com/md-marop-hossain/Multilingual-Retrieval-Augmented-Generation-RAG-System.git
+cd Multilingual-Retrieval-Augmented-Generation-RAG-System
+python -m venv myenv
+source myenv/bin/activate  # or myenv\Scripts\activate on Windows
+pip install -r requirements.txt
+```
