@@ -76,5 +76,5 @@ Start the FastAPI app using:
 | Server                | uvicorn                | ASGI server for running FastAPI app                                     |
 
 ## 💬 Sample Queries and Outputs
-
+<img src="images/api.png" width="300" />
 
