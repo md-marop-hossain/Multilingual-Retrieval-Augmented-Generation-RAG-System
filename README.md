@@ -50,3 +50,6 @@ Start the FastAPI app using:
    - Ask a question : ```POST http://127.0.0.1:8000/ask```
    - Evaluate the system : ```POST http://127.0.0.1:8000/evaluate```
    
+**Step 5: Start the Streamlit UI**
+
+```streamlit run rag_ui.py```
