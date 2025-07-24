@@ -1,0 +1,11 @@
+openai
+faiss-cpu
+tiktoken
+pytesseract
+PyMuPDF
+pillow
+fastapi
+uvicorn
+scikit-learn
+nest_asyncio
+streamlit
