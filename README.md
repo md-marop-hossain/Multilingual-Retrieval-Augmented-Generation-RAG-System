@@ -26,3 +26,5 @@ python -m venv myenv
 source myenv/bin/activate  # or myenv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
+1. Run ```pdf_extractor.py``` for text extraction from pdf
+Use command : ```python pdf_extractor.py```
