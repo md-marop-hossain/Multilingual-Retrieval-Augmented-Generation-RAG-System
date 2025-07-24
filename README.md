@@ -2,6 +2,7 @@
 Design and implement a basic RAG pipeline capable of understanding and responding to both English and Bengali queries. The system should fetch relevant information from a pdf document corpus and generate a meaningful answer grounded in retrieved content.
 
 ## 📦 Directory Structure
+```
 ├── app.py # FastAPI backend
 
 ├── build_index.py # Embeds and stores vector data using FAISS
@@ -13,6 +14,7 @@ Design and implement a basic RAG pipeline capable of understanding and respondin
 │ └── chat_log.jsonl # User Q&A logs (if /chat is used)
 ├── .env # OpenAI API Key
 └── HSC26_Bangla.pdf # Your knowledge base (Bangla PDF)
+```
 
 ## 🚀 Setup Instructions
 ```
