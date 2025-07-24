@@ -1,5 +1,5 @@
 # Developed a Simple Multilingual Retrieval-Augmented Generation (RAG) System
-Design and implement a basic RAG pipeline capable of understanding and responding to both English and Bengali queries. The system should fetch relevant information from a pdf document corpus and generate a meaningful answer grounded in retrieved content.
+Design and implement a basic RAG pipeline capable of understanding and responding to both English and Bengali queries.
 
 ## 📦 Directory Structure
 ```
