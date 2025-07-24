@@ -88,7 +88,7 @@ Start the FastAPI app using:
   </tr>
   <tr>
     <td><img src="images/cosn.png" width="400"/></td>
-    <td></td>
+    <td><img src="images/steamlit_interface.png" width="400"/></td>
   </tr>
 </table>
 
