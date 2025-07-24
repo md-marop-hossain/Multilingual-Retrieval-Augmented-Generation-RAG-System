@@ -70,4 +70,7 @@ Start the FastAPI app using:
 | API Key Management    | python-dotenv          | Loads sensitive keys like `OPENAI_API_KEY` securely from `.env` file    |
 | Async Handling        | nest_asyncio           | Enables async FastAPI in notebook-style or blocking environments        |
 | Tokenization Utility  | tiktoken               | Used to count tokens (e.g., for chunk size management)        |
-
+| Data Serialization    | pickle                 | Loads/stores vector index and text chunks                               |
+| Math/Numeric          | numpy                  | Vector and matrix operations                                            |
+| Typing & Validation   | pydantic               | Defines and validates API input/output models                           |
+| Server                | uvicorn                | ASGI server for running FastAPI app                                     |
