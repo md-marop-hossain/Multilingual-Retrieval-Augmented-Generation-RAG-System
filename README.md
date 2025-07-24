@@ -28,26 +28,25 @@ python -m venv myenv
 source myenv/bin/activate  # or myenv\Scripts\activate on Windows
 pip install -r requirements.txt
 ```
-**step 2: Extract Text from PDF**
+**Step 2: Extract Text from PDF**
 
 Run the following command to extract text from the PDF using ```pdf_extractor.py```:
    
 ```python pdf_extractor.py```
 
-
-Step 3: Build Vector Index
+**Step 3: Build Vector Index**
 
 This step includes chunking, embedding, and creating the vector store:
 
 ```python build_vector_index.py```
 
-Step 4: Launch the FastAPI Server
+**Step 4: Launch the FastAPI Server**
 
 Start the FastAPI app using:
 
 ```uvicorn app:app --reload```
 
- Available API Endpoints:
+ **Available API Endpoints:**
    - Ask a question : ```POST http://127.0.0.1:8000/ask```
    - Evaluate the system : ```POST http://127.0.0.1:8000/evaluate```
    
