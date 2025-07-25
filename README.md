@@ -125,6 +125,9 @@ The evaluation matrix helps measure the quality, relevance, and reliability of g
   - **Average similarity** — mean semantic similarity of top retrieved chunks.
   - **Individual scores** — similarity for each retrieved chunk.
 - A higher average indicates better semantic relevance of retrieved context to the query.
+<p align="center">
+  <img src="images/cosn.png" width="500"/>
+</p>
 
 ### 2. **Groundedness Check**
 
