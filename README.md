@@ -1,6 +1,13 @@
 # Developed a Simple Multilingual Retrieval-Augmented Generation (RAG) System
 Design and implement a basic RAG pipeline capable of understanding and responding to both English and Bengali queries.
 
+## 🔄 SYSTEM SUMMARY FLOW
+
+<p align="center">
+  <img src="images/Flowchart of User Query Process.png" width="600"/>
+</p>
+
+
 ## 📦 Directory Structure
 ```
 ├── app.py # FastAPI backend
