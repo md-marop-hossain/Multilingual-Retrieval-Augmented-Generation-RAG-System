@@ -13,7 +13,7 @@ Built a lightweight RAG system capable of answering Bangla and English queries f
 ├── app.py # FastAPI backend
 ├── build_vector_index.py # Embeds and stores vector data using FAISS
 ├── pdf_extractor.py # Extracts and preprocesses text from PDF
-├── rag_ui.py # Extracts and preprocesses text from PDF
+├── rag_ui.py # Show streamlit interface
 ├── index/
 │ ├── faiss_index.idx # Vector index
 │ └── valid_chunks.pkl # Serialized document chunks
