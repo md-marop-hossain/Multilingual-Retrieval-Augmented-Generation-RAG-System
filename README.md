@@ -99,6 +99,20 @@ Start the FastAPI app using:
   </tr>
 </table>
 
+## 📑 API Documentation
+
+- Framework: FastAPI
+
+- Endpoints:
+
+  - ```POST /ask```: Accepts a user query and returns an answer using the RAG pipeline.
+
+  - ```GET /evaluate```: Checks system status.
+
+- Input: JSON containing ```"query"``` field (e.g., ```{"query": "কাকে অনুপমের ভাগ্য দেবতা বলে উল্লেখ করা হয়েছে?"}```)
+
+- Output: JSON with ```"answer"```, and optionally, ```"context"``` (top-matched chunks).
+
 ## 🧾 Questions & Answers
 
 📝 **What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?**
