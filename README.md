@@ -99,6 +99,7 @@ Start the FastAPI app using:
   </tr>
 </table>
 
+## 🧾 Questions & Answers
 
 📝 **What method or library did you use to extract the text, and why? Did you face any formatting challenges with the PDF content?**
 
@@ -115,6 +116,57 @@ This OCR-based method allowed me to extract readable and indexable Bangla text f
 
 📝 **What chunking strategy did you choose (e.g. paragraph-based, sentence-based, character limit)? Why do you think it works well for semantic retrieval?**
 
+I used a sentence-based chunking strategy with a 500-token limit per chunk.
 
+- This ensures each chunk is semantically complete and doesn't cut off important context.
+- It works well for semantic retrieval because meaningful, token-aware chunks lead to better embedding quality and more accurate search results in FAISS.
+- It’s also language-friendly, adapting well to both Bangla and English sentence structures.
 
+📝 **What embedding model did you use? Why did you choose it? How does it capture the meaning of the text?**
+
+I used OpenAI's ```text-embedding-3-large``` model.
+
+- Why? It offers high-quality multilingual support, making it ideal for both Bangla and English queries.
+- How? It converts text into dense vectors that capture semantic meaning, allowing similar ideas to be close in vector space—even across languages.
+- Result: More accurate chunk retrieval and better answers in our RAG system.
+
+📝 **How are you comparing the query with your stored chunks? Why did you choose this similarity method and storage setup?**
+
+I compare the query with stored chunks using FAISS and L2 (Euclidean) distance on the embedding vectors.
+
+- Why FAISS? It's fast, scalable, and optimized for high-dimensional vector search.
+- Why L2 distance? It works well with OpenAI embeddings, providing reliable similarity scoring.
+- Storage Setup: We use FAISS for the index and store the corresponding text chunks in a pickle file for quick retrieval.
+
+This setup ensures efficient, accurate semantic search in both Bangla and English.
+
+📝 **How do you ensure that the question and the document chunks are compared meaningfully? What would happen if the query is vague or missing context?**
+
+Ensuring Meaningful Comparison:
+- I use OpenAI’s ```text-embedding-3-large``` to embed both the query and the document chunks in the same semantic space, ensuring meaningful comparisons.
+- FAISS then retrieves chunks closest in meaning, not just based on keywords.
+
+If the query is vague or lacks context:
+- The system may retrieve less relevant chunks, leading to generic or incomplete answers.
+- However, the embedding model still tries to infer intent from available cues, often retrieving semantically related content.
+
+To improve performance, we recommend clear and specific queries.
+
+📝 **Do the results seem relevant? If not, what might improve them (e.g. better chunking, better embedding model, larger document)?**
+
+Yes, results are generally relevant thanks to:
+- Sentence-based chunking
+- High-quality embeddings (```text-embedding-3-large```)
+- Semantic search via FAISS
+
+When Results May Seem Irrelevant:
+- If chunks are too short or too long → context may be lost or diluted
+- If query is vague or ambiguous → embeddings may not capture intent
+- If the document is too small → not enough info to match
+
+How to Improve:
+- Use dynamic chunking based on meaning and topic
+- Fine-tune chunk length (e.g., 300–600 tokens)
+- Add metadata filtering or reranking
+- Use long-context models like GPT-4o with better prompt design
 
