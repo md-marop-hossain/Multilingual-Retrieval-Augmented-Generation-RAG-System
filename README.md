@@ -1,5 +1,5 @@
 # Developed a Simple Multilingual Retrieval-Augmented Generation (RAG) System
-Design and implement a basic RAG pipeline capable of understanding and responding to both English and Bengali queries.
+Built a lightweight RAG system capable of answering Bangla and English queries from Bangla PDF documents. The system uses Tesseract OCR for Bangla text extraction, OpenAI’s ```text-embedding-3-large``` for multilingual embedding, FAISS for semantic retrieval, and ```GPT-4o``` for context-aware responses. A Streamlit interface communicates with a FastAPI backend for smooth and interactive user experience.
 
 ## 🔄 SYSTEM SUMMARY FLOW
 
