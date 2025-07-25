@@ -103,15 +103,64 @@ Start the FastAPI app using:
 
 - Framework: FastAPI
 
-- Endpoints:
-
-  - ```POST /ask```: Accepts a user query and returns an answer using the RAG pipeline.
-
-  - ```GET /evaluate```: Checks system status.
+| Endpoint    | Method | Description                                |
+|-------------|--------|--------------------------------------------|
+| `/`         | GET    | Health check and basic API info            |
+| `/ask`      | POST   | Ask a question and get a short answer with relevant context chunks |
+| `/evaluate` | POST   | Get answer with evaluation metrics (cosine similarity, groundedness) |
 
 - Input: JSON containing ```"query"``` field (e.g., ```{"query": "কাকে অনুপমের ভাগ্য দেবতা বলে উল্লেখ করা হয়েছে?"}```)
 
 - Output: JSON with ```"answer"```, and optionally, ```"context"``` (top-matched chunks).
+
+## 📊 Evaluation Matrix
+
+The evaluation matrix helps measure the quality, relevance, and reliability of generated answers by combining:
+
+### 1. **Cosine Similarity Scores**
+
+- Measures the semantic closeness between the user query embedding and the embeddings of retrieved chunks.
+- Calculated using cosine similarity between query and chunk embeddings.
+- Returns:
+  - **Average similarity** — mean semantic similarity of top retrieved chunks.
+  - **Individual scores** — similarity for each retrieved chunk.
+- A higher average indicates better semantic relevance of retrieved context to the query.
+
+### 2. **Groundedness Check**
+
+- Uses a GPT-4o prompt to verify if the generated answer is strictly supported by the retrieved context.
+- Response is either **YES** or **NO**, with a brief explanation.
+- Ensures the answer is not hallucinated or unsupported by the knowledge base.
+
+### 3. **Answer Generation**
+
+- Produces a short, precise answer based solely on the retrieved context.
+- Designed to avoid long explanations or irrelevant information.
+- Focuses on returning the exact name, number, phrase, or fragment that directly answers the question.
+
+## 🧩 Dependencies
+
+| Package           | Version    | Description                               |
+|-------------------|------------|-------------------------------------------|
+| Python            | 3.8+       | Core programming language                 |
+| openai            | ≥ 1.3.7     | OpenAI API for embedding & completion     |
+| faiss-cpu         | latest     | Vector similarity search engine (CPU)     |
+| tiktoken          | latest     | Tokenizer for OpenAI models               |
+| pytesseract       | latest     | OCR engine for Bangla and English text    |
+| PyMuPDF           | latest     | PDF text and image extraction             |
+| pillow            | latest     | Image processing                          |
+| fastapi           | latest     | High-performance web framework            |
+| uvicorn[standard] | latest     | ASGI server to run FastAPI                |
+| scikit-learn      | latest     | Evaluation and machine learning tools     |
+| nest_asyncio      | latest     | Enables nested async loops                |
+| streamlit         | latest     | Interactive web-based UI                  |
+| python-dotenv     | latest     | Load environment variables from `.env`    |
+| numpy             | latest     | Numerical computing library               |
+
+> 📦 To install all dependencies, run:
+```bash
+pip install -r requirements.txt
+```
 
 ## 🧾 Questions & Answers
 
