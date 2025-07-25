@@ -105,3 +105,9 @@ Yes, there were formatting challenges:
 - To address this, I used Unicode normalization (```unicodedata```) and regular expressions to clean and standardize the output.
 
 This OCR-based method allowed me to extract readable and indexable Bangla text from the scanned PDF for downstream RAG tasks.
+
+📝 **What chunking strategy did you choose (e.g. paragraph-based, sentence-based, character limit)? Why do you think it works well for semantic retrieval?**
+
+
+
+
